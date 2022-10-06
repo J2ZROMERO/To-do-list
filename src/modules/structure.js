@@ -19,6 +19,7 @@ export default class task {
   this.taskC.description = desc;
   this.taskC.index = ind;
   this.taskA.push(this.taskC)
+  console.log(this.taskA ,"insert")  
 /* */
 
   let taskE = `<li id="${this.taskC.index}"
@@ -33,30 +34,43 @@ this.taskAD.push(taskE)
 while(contentTasks.firstChild ){
   contentTasks.removeChild(contentTasks.firstChild );
 }
-this.taskAD.forEach((x)=>{
-  contentTasks.innerHTML += x;
+this.taskA.forEach((x,i)=>{
+  contentTasks.innerHTML += this.taskAD[i];
 })
 
   }
 
-countelement(){
-  console.log(this.taskA)
-  
-}
-
-  read(){
-
-  }
-
+ 
   delete(iconD,taskParent){
+   
     if (iconD.target.classList == 'del') {       
-
       taskParent.removeChild(iconD.target.parentElement);
-      
-console.log(iconD.target.classList);
+    
+  let filtrado =   this.taskA.filter(x => x.index != parseInt(iconD.target.parentElement.getAttribute('id') )).map(function(elem,index){ 
+    elem.index = index+1
+  
+    return elem
+  
+  })
 
-    }
+  // let p = filtrado.map(function(elem,index){ 
+  //   elem.index = index+1
+  
+  //   return elem
+  
+  // })
+
+this.taskA = filtrado;
+
+  /* */
+
+  /* */
+}
   }
+
+
+
+
 
   update(){
 

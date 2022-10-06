@@ -16,7 +16,7 @@ const taskV = new task;
 
     taskV.create(contentTask,false,inputTask.value,contentTask.childElementCount+1) 
     inputTask.value = '';
-    taskV.countelement()
+ 
   }
   })
 
