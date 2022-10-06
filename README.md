@@ -30,7 +30,7 @@ To get a local copy up and running follow these simple example steps.
 ### copy link the repository.
 
 [clone this repo:](https://github.com/J2ZROMERO/To-do-list.git);
-
+[LIVE DEMO](https://j2zromero.github.io/To-do-list/dist/)
 
 ## Authors
 
