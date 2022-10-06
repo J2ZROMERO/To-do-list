@@ -11,12 +11,9 @@ const contentTask = document.querySelector('.pctasks');
 const taskV = new task;
 
   document.querySelector('.enter').addEventListener('click',()=>{
-    
     if(inputTask.value != ''){
-
     taskV.create(contentTask,false,inputTask.value,contentTask.childElementCount+1) 
     inputTask.value = '';
- 
   }
   })
 

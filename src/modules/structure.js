@@ -19,7 +19,6 @@ export default class task {
   this.taskC.description = desc;
   this.taskC.index = ind;
   this.taskA.push(this.taskC)
-  console.log(this.taskA ,"insert")  
 /* */
 
   let taskE = `<li id="${this.taskC.index}"
@@ -45,26 +44,29 @@ this.taskA.forEach((x,i)=>{
    
     if (iconD.target.classList == 'del') {       
       taskParent.removeChild(iconD.target.parentElement);
-    
+
   let filtrado =   this.taskA.filter(x => x.index != parseInt(iconD.target.parentElement.getAttribute('id') )).map(function(elem,index){ 
     elem.index = index+1
-  
     return elem
-  
   })
 
-  // let p = filtrado.map(function(elem,index){ 
-  //   elem.index = index+1
-  
-  //   return elem
-  
-  // })
-
+  while(taskParent.firstChild ){
+  taskParent.removeChild(taskParent.firstChild );
+}
 this.taskA = filtrado;
 
-  /* */
+this.taskA.forEach((x)=>{
+  let taskE = `<li id="${x.index}"
+  class="tsk">
+  <input type="checkbox" class="checkB" name="vehicle1" value="Bike">
+  <input type="text" class="nametsk" value= '${x.description}' disabled> </input> 
+  <img class="del" src='${deletei}' alt="">
+  <img class="dot" src='${dots}' alt=""><hr>
+         </li>`;
+         taskParent.innerHTML += taskE;
+})
 
-  /* */
+
 }
   }
 
