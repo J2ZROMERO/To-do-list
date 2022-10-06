@@ -1,83 +1,92 @@
-body,html {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+body,
+html {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-h1{
-    margin-left: 16px;
+
+h1 {
+  margin-left: 16px;
 }
+
 .tasks {
-    width: 50%;
-    box-shadow: 1px 1px 1px 15px rgb(29 47 232 / 13%);
-}
-.headT{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    border-bottom: 1px solid gray;
-}
-.refresh{
-    width: 30px;
-    height: 30px;
-    margin-right: 4%;
-}
-.toDo{
-    width: 100%;
-    width: 100%;
-    height: 55px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    border-bottom: 1px solid gray;
-}
-.addToDo{
-    width: 85%;
-    background-color: transparent;
-    outline: none;
-    height: 100%;
-    border: 0;
-    cursor: pointer;
-}
-.enter{
-    height: 24px;
-    width: 24px;
-    margin-right: 4%;
+  width: 50%;
+  box-shadow: 1px 1px 1px 15px rgb(29 47 232 / 13%);
 }
 
-.pctasks{ 
-    padding: 0;
-    list-style: none;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.headT {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  border-bottom: 1px solid gray;
 }
- .tsk{
-    width: 86%;
-    margin-left: 0%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 45px;
-    border-bottom: 1px solid gray;
+
+.refresh {
+  width: 30px;
+  height: 30px;
+  margin-right: 4%;
 }
-.nametsk{
-    width: 85%;
-    
+
+.toDo {
+  width: 100%;
+  height: 55px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-bottom: 1px solid gray;
 }
+
+.addToDo {
+  width: 85%;
+  background-color: transparent;
+  outline: none;
+  height: 100%;
+  border: 0;
+  cursor: pointer;
+}
+
+.enter {
+  height: 24px;
+  width: 24px;
+  margin-right: 4%;
+}
+
+.pctasks {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tsk {
+  width: 86%;
+  margin-left: 0%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 45px;
+  border-bottom: 1px solid gray;
+}
+
+.nametsk {
+  width: 85%;
+}
+
 .dot {
-    width: 24px;
-    cursor: move;
-} 
+  width: 24px;
+  cursor: move;
+}
 
-footer{
-    width: 100%;
-    height: 53px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+footer {
+  width: 100%;
+  height: 53px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
