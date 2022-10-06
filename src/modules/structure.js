@@ -5,50 +5,35 @@ export default class task {
     
 
     this.taskA = [];
+    this.taskAD = [];
  this.count = 0;
         
   }
 
-  create(contentTasks,comp, desc) {
+  create(contentTasks,comp, desc,ind) {
 
-this.count+=1
+
     /* Store array */
   this.taskC = {};
   this.taskC.completed = comp;
   this.taskC.description = desc;
-  this.taskC.index = this.count;
+  this.taskC.index = ind;
   this.taskA.push(this.taskC)
 /* */
 
-  let taskE = "";
-  const newArray = this.taskA.map(function(task){
-  
-  
-    if (task.completed === true) {
-    taskE = `<li class="tsk">
-      <input type="checkbox" class="checkB" checked name="vehicle1" value="Bike">
-      <input type="text" class="nametsk" value= '${task.description}' disabled> </input> 
-      <img class="dot" src='${deletei}' alt="">
-      <img class="dot" src='${dots}' alt="">
-              </li>`;
-  } else {
-    taskE = `<li html index of element js
+  let taskE = `<li id="${this.taskC.index}"
     class="tsk">
     <input type="checkbox" class="checkB" name="vehicle1" value="Bike">
-    <input type="text" class="nametsk" value= '${task.description}' disabled> </input> 
+    <input type="text" class="nametsk" value= '${this.taskC.description}' disabled> </input> 
     <img class="del" src='${deletei}' alt="">
     <img class="dot" src='${dots}' alt=""><hr>
            </li>`;
-  }
   
-  return taskE;
-
-})
-
+this.taskAD.push(taskE)
 while(contentTasks.firstChild ){
   contentTasks.removeChild(contentTasks.firstChild );
 }
-newArray.forEach((x)=>{
+this.taskAD.forEach((x)=>{
   contentTasks.innerHTML += x;
 })
 
