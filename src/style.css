@@ -75,6 +75,10 @@ h1 {
 
 .nametsk {
   width: 85%;
+  height: 83%;
+  border: none;
+  outline: none;
+  
 }
 
 .dot {
@@ -89,4 +93,7 @@ footer {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+}
+.del{
+  width: 20px;
 }
