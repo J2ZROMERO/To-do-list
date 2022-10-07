@@ -91,10 +91,16 @@ this.taskA.forEach((x)=>{
     // this.inputdata = this.taskA.filter(x  => x.index ==  indice? x:"")
 
   }
-//    if( x.target.classList.value === 'check'){
-//     let index = x.target.parentElement.getAttribute('id')
-//     let inputdata = this.taskA.filter(x  => x.index ==  index? x:"")
-// let inputenrties = document.querySelector('.nametsk').value;
+   
+  if( x.target.classList.value === 'check'){
+    let index = x.target.parentElement.getAttribute('id')
+    let textinput = document.getElementById(index);
+
+    let inputenrties = document.querySelector('.nametsk').value;
+    textinput.children[1].value = inputenrties 
+    //     let inputdata = this.taskA.filter(x  => x.index ==  index? x:"")
+    
+
 //     let datamodified = this.taskA.map((x)=>{
 
 //     if(x.index ==  index){
@@ -103,9 +109,10 @@ this.taskA.forEach((x)=>{
     
 // return x
 //    })
-// console.log(datamodified)
+console.log(textinput.children[1].value)
+
   
-//    }
+   }
 
 
   }
