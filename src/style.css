@@ -78,7 +78,6 @@ h1 {
   height: 83%;
   border: none;
   outline: none;
-  
 }
 
 .dot {
@@ -94,10 +93,12 @@ footer {
   align-items: center;
   cursor: pointer;
 }
-.del{
+
+.del {
   width: 20px;
 }
-.check{
+
+.check {
   width: 20px;
   margin-right: 12px;
   display: none;
