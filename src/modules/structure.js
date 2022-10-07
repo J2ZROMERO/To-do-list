@@ -95,23 +95,22 @@ this.taskA.forEach((x)=>{
   if( x.target.classList.value === 'check'){
     let index = x.target.parentElement.getAttribute('id')
     let textinput = document.getElementById(index);
-
-    let inputenrties = document.querySelector('.nametsk').value;
+    let inputenrties = textinput.children[1].value;
     textinput.children[1].value = inputenrties 
-    //     let inputdata = this.taskA.filter(x  => x.index ==  index? x:"")
     
-
-//     let datamodified = this.taskA.map((x)=>{
-
-//     if(x.index ==  index){
-// x.description = inputenrties 
-// }
+    // let inputdata = this.taskA.filter(x  => x.index ==  index? x:"")
     
-// return x
-//    })
-console.log(textinput.children[1].value)
-
-  
+   let datamodified = this.taskA.map((x)=>{
+    if(x.index ==  index){
+x.description = inputenrties 
+}
+return x
+   })
+   textinput.children[1].disabled = true;
+    textinput.children[2].style.display = 'none';
+   
+  this.taskA = datamodified;
+   
    }
 
 
