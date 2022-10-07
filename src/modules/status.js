@@ -1,62 +1,40 @@
-
-import { sample } from "lodash";
-import Task from "./structure";
+/* eslint eqeqeq: 0 */
+import Task from './structure.js';
 import deletei from '../img/deletei.png';
 import check from '../img/check.png';
 import dots from '../img/dots.png';
 
-
 export default class Status {
-
-constructor (){
-    this.completed;
-   
-}
-
-
-
-stat(x){
-this.taskLS = new Task;
-   const index = x.target.parentElement.getAttribute('id');
+  stat = (x) => {
+    this.taskLS = new Task();
+    const index = x.target.parentElement.getAttribute('id');
     const checkBv = document.getElementById(index);
     let sts = false;
-    
-    if(x.target.classList.value === 'checkB'){
-        sts =  checkBv.children[0].checked;
-      
-        let getls = JSON.parse(localStorage.getItem('tasks') )
-      
-        let datamodified = getls.map((x,i) => {
-       
-        if( x.index == index){
-        x.completed = sts
 
-       }
-        
-        
+    if (x.target.classList.value === 'checkB') {
+      sts = checkBv.children[0].checked;
+
+      const getls = JSON.parse(localStorage.getItem('tasks'));
+
+      const datamodified = getls.map((x) => {
+        if (x.index == index) {
+          x.completed = sts;
+        }
+
         return x;
       });
-    
-     this.taskLS.localS(datamodified)
-      
- 
-    }
-    
-   return sts
+
+      this.taskLS.localS(datamodified);
     }
 
+    return sts;
+  }
 
-
-loadpage(contentTask){
-    let getls = JSON.parse(localStorage.getItem('tasks') )
-
-  
-    if(getls.length > 0){
-    
-      getls.forEach(x => {
-    
-      
-      const taskE = `<li id="${x.index}"
+  loadpage = (contentTask) => {
+    const getls = JSON.parse(localStorage.getItem('tasks'));
+    if (getls.length > 0) {
+      getls.forEach((x) => {
+        const taskE = `<li id="${x.index}"
       class="tsk">
       <input type="checkbox" class="checkB" name="vehicle1" value="Bike">
       <input type="text" class="nametsk" value= '${x.description}' disabled> </input> 
@@ -64,11 +42,8 @@ loadpage(contentTask){
       <img class="del" src='${deletei}' alt="">
       <img class="dot" src='${dots}' alt=""><hr>
       </li>`;
-      contentTask.innerHTML += taskE;
-      
-    });
+        contentTask.innerHTML += taskE;
+      });
     }
+  }
 }
-
-}
-

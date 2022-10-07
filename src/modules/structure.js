@@ -12,26 +12,18 @@ export default class Task {
 
   create = (contentTasks, comp, desc, ind) => {
     /* Store array */
-    
-
-
-
-    console.log(this.taskA)
     this.taskC = {};
     this.taskC.completed = comp;
     this.taskC.description = desc;
     this.taskC.index = ind;
     this.taskA.push(this.taskC);
     /* */
-    
 
- 
-
-    //this.taskAD.push(taskE);
+    // this.taskAD.push(taskE);
     while (contentTasks.firstChild) {
       contentTasks.removeChild(contentTasks.firstChild);
     }
-    this.taskA.forEach((x, i) => {
+    this.taskA.forEach((x) => {
       const taskE = `<li id="${x.index}"
       class="tsk">
       <input type="checkbox" class="checkB" name="vehicle1" value="Bike">
@@ -106,44 +98,34 @@ export default class Task {
     }
   }
 
-  clearALl (x){
-    
-  }
-
   localS = (data) => {
     localStorage.setItem('tasks', JSON.stringify(data));
   }
 
+  getDataA() {
+    return this.taskA;
+  }
 
-getDataA(){
-return this.taskA;
-}
+  setDataA = (data, parent) => {
+    this.taskA = data;
 
-setDataA(data,parent){
-  this.taskA = data;
+    this.taskA.map((elem, index) => {
+      elem.index = (index + 1);
 
-  const filtradoCA = this.taskA.map((elem, index) => {
-    elem.index = (index + 1);
-    console.log(elem.index)
-    return elem;
-  });
-  this.localS(this.taskA)
-  
-    let taskVa = Array.from(parent.childNodes)
-    
-    taskVa.forEach((x,i)=>{
-x.id = i+1
-    })
+      return elem;
+    });
+    this.localS(this.taskA);
 
-}
+    const taskVa = Array.from(parent.childNodes);
 
-setDat(val){
-  val.forEach((x)=>{
-    this.taskA.push(x)
-    
-  })
-console.log(this.taskA)
-}
+    taskVa.forEach((x, i) => {
+      x.id = i + 1;
+    });
+  }
 
-
+  setDat = (val) => {
+    val.forEach((x) => {
+      this.taskA.push(x);
+    });
+  }
 }
