@@ -14,7 +14,14 @@ const taskV = new task;
     if(inputTask.value != ''){
     taskV.create(contentTask,false,inputTask.value,contentTask.childElementCount+1) 
     inputTask.value = '';
+  
+    // let  p = document.querySelector('.nametsk')
+    // taskV.update(p)
+    
   }
+
+    
+
   })
 
 contentTask.addEventListener('click',(x)=>{
@@ -22,10 +29,14 @@ contentTask.addEventListener('click',(x)=>{
 })  
   
 
-  
-  
+contentTask.addEventListener('click',(x)=>{
+  taskV.update(x,contentTask)
+})  
+ 
 
 
+
+ 
 
 
 

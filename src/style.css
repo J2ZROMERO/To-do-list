@@ -97,3 +97,8 @@ footer {
 .del{
   width: 20px;
 }
+.check{
+  width: 20px;
+  margin-right: 12px;
+  display: none;
+}
