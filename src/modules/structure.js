@@ -19,21 +19,20 @@ export default class Task {
     this.taskA.push(this.taskC);
     /* */
 
-    const taskE = `<li id="${this.taskC.index}"
-    class="tsk">
-    <input type="checkbox" class="checkB" name="vehicle1" value="Bike">
-    <input type="text" class="nametsk" value= '${this.taskC.description}' disabled> </input> 
-    <img class="check" src='${check}' alt="">
-    <img class="del" src='${deletei}' alt="">
-    <img class="dot" src='${dots}' alt=""><hr>
-           </li>`;
-
-    this.taskAD.push(taskE);
+    // this.taskAD.push(taskE);
     while (contentTasks.firstChild) {
       contentTasks.removeChild(contentTasks.firstChild);
     }
-    this.taskA.forEach((x, i) => {
-      contentTasks.innerHTML += this.taskAD[i];
+    this.taskA.forEach((x) => {
+      const taskE = `<li id="${x.index}"
+      class="tsk">
+      <input type="checkbox" class="checkB" name="vehicle1" value="Bike">
+      <input type="text" class="nametsk" value= '${x.description}' disabled> </input> 
+      <img class="check" src='${check}' alt="">
+      <img class="del" src='${deletei}' alt="">
+      <img class="dot" src='${dots}' alt=""><hr>
+             </li>`;
+      contentTasks.innerHTML += taskE;
     });
     this.localS(this.taskA);
   }
@@ -101,5 +100,32 @@ export default class Task {
 
   localS = (data) => {
     localStorage.setItem('tasks', JSON.stringify(data));
+  }
+
+  getDataA() {
+    return this.taskA;
+  }
+
+  setDataA = (data, parent) => {
+    this.taskA = data;
+
+    this.taskA.map((elem, index) => {
+      elem.index = (index + 1);
+
+      return elem;
+    });
+    this.localS(this.taskA);
+
+    const taskVa = Array.from(parent.childNodes);
+
+    taskVa.forEach((x, i) => {
+      x.id = i + 1;
+    });
+  }
+
+  setDat = (val) => {
+    val.forEach((x) => {
+      this.taskA.push(x);
+    });
   }
 }
