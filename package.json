@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/J2ZROMERO/To-do-list#readme",
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.18.6",
     "babel-eslint": "^10.1.0",
     "css-loader": "^6.7.1",
     "eslint": "^7.32.0",
