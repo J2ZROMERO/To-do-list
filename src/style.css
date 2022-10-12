@@ -86,7 +86,7 @@ h1 {
   cursor: move;
 }
 
-footer {
+.clear {
   width: 100%;
   height: 53px;
   display: flex;

@@ -35,7 +35,7 @@ contentTask.addEventListener('click', (x) => {
 });
 
 clear.addEventListener('click', () => {
-  const taskVa = Array.from(contentTask.childNodes);
+  const [...taskVa] = contentTask.childNodes;
   const nvtf = taskVa.filter((x) => x.children[0].checked == false);
   taskVa.filter((x) => x.children[0].checked == true).map((b) => {
     contentTask.removeChild(b);

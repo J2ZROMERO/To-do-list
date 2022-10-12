@@ -116,7 +116,7 @@ export default class Task {
     });
     this.localS(this.taskA);
 
-    const taskVa = Array.from(parent.childNodes);
+    const [...taskVa] = parent.childNodes;
 
     taskVa.forEach((x, i) => {
       x.id = i + 1;
