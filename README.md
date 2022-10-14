@@ -17,21 +17,24 @@
 
 ** Download,test,edit, make a fork  just read the instructions and enjoy the project **
 
-
-
 To get a local copy up and running follow these simple example steps.
 
-### you must have intalled git.
+> You must have an account on git hub. [Git Hub](https://github.com/)
 
-### you must have an account on git hub.
+> You must have installed git in your local environment. [Git](https://git-scm.com/download/win)
 
-### Install a text-editor you prefer.
+> If you just want to take a look quickly, make a fork and open the project in the web browser by adding ".dev" instead of ."com" in the repo link.
+- Example : https://github.dev/J2ZROMERO/To-do-list.git
+
+> Install a text-editor you prefer. [Code editors](https://desarrolloweb.com/colecciones/editores-codigo).
+
+> Execute git clone [repo link] in your git bash or terminal.
 
 ### copy link the repository.
 
 [clone this repo](https://github.com/J2ZROMERO/To-do-list.git)
 
-[LIVE DEMO](https://j2zromero.github.io/To-do-list/dist/)
+# [LIVE DEMO](https://j2zromero.github.io/To-do-list/dist/)
 
 ## Authors
 
