@@ -29,7 +29,7 @@ export default class Task {
   }
 
   delete = (iconD, taskParent) => {
-        console.log(iconD , "   saaaaaaaa" , taskParent)
+  
      taskParent.removeChild(iconD)
       this.localS(this.taskA);
     
@@ -43,6 +43,40 @@ export default class Task {
     localStorage.setItem('tasks', JSON.stringify(data));
   }
 
+
+  
+  update = (x) => {
+    const textinput = x.children[1];
+ 
+    if ( x.children[2].className === 'check') {
+      const index = x.parentElement.getAttribute('id');
+      const inputenrties = "data changed on mock";
+      textinput.value = inputenrties;
+     
+      const datamodified = this.taskA.map((x) => {
+       switch (x.index) {
+case 3:
+x.description = inputenrties;
+break;
+       }
+               
+        return x;
+      });
+
+
+      
+      this.taskA = datamodified;
+      // console.log(datamodified)
+      this.localS(this.taskA);
+    }
+
+    return textinput.value
+   
+}
+
+  localS = (data) => {
+    localStorage.setItem('tasks', JSON.stringify(data));
+  }
 }
 
 
