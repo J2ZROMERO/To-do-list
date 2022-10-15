@@ -26,15 +26,18 @@ export default class Task {
              </li>`;
       contentTasks.innerHTML += taskE;
        this.localS(this.taskA);
+       this.getDataA()
   }
 
   delete = (iconD, taskParent) => {
   
      taskParent.removeChild(iconD)
-      this.localS(this.taskA);
-    
-      const getls = JSON.parse(localStorage.getItem('tasks'));
-      console.log(getls)
+     
+     this.localS(this.taskA);
+     const getls = JSON.parse(localStorage.getItem('tasks'));
+
+      const farray = getls.filter(x => x.index != iconD.id  )
+      this.localS(farray);
       return  taskParent
   }
 
@@ -44,7 +47,6 @@ export default class Task {
   }
 
 
-  
   update = (x) => {
     const textinput = x.children[1];
  
@@ -64,19 +66,105 @@ break;
       });
 
 
-      
       this.taskA = datamodified;
-      // console.log(datamodified)
       this.localS(this.taskA);
     }
-
+this.getDataA()
     return textinput.value
    
 }
 
+
+
+
+
+
+stat = (x) => {
+  const index = x.id; 
+
+  if (x.children[0].className === 'checkB') {
+    x.children[0].checked = true;
+    const getls = JSON.parse(localStorage.getItem('tasks'));
+    const datamodified = getls.map((x) => {
+      if (x.index == index) {
+        x.completed = true;
+      }
+      return x;
+    });
+    this.localS(datamodified);
+  
+  }
+  return x.children[0].checked
+}
+
+/***/
+clearCompleted(x){
+
+for(let i = 0; i < x.childElementCount;i++){ 
+  if(x.children[i].id == 1 || x.children[i].id == 2 || x.children[i].id == 3){
+      x.children[i].children[0].checked = true
+    }
+}
+  const [...taskVa] = x.childNodes;
+  const nvtf = taskVa.filter((x) => x.children[0].checked == false);
+
+  taskVa.filter((e) => e.children[0].checked == true).map((b) => {
+    x.removeChild(b);
+    return b;
+  });
+
+  const obnew = [];
+  this.getDataA().filter((x) => {
+    nvtf.forEach((element) => {
+      if (x.index == element.id) {
+        obnew.push(x);
+      }
+    });
+    return '';
+  });
+  this.setDataA(obnew); 
+this.getDataA()
+return x.children[0].id
+
+}
+ 
+ /** */
+
+
+
+ setDataA = (data) => {
+  this.taskA = data;
+  this.taskA.map((elem, index) => {
+    elem.index = (index + 1);
+    return elem;
+  });
+  this.localS(this.taskA);
+}
+
+
   localS = (data) => {
     localStorage.setItem('tasks', JSON.stringify(data));
   }
+
+
+  getDataA() {
+    
+    return JSON.parse(localStorage.getItem('tasks'));
+  }
+
+  
+  setDat = (val) => {
+    val.forEach((x) => {
+      this.taskA.push(x);
+    });
+  }
+
+
+
+
+
+
+
 }
 
 
