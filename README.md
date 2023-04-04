@@ -56,6 +56,7 @@
 - **[ESLint]**
 - **[ES6]**
 - **[Flex box]**
+- **[Jest]**
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -185,5 +186,6 @@ This project is [MIT](https://github.com/J2ZROMERO/To-do-list/blob/main/MIT.md) 
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 
